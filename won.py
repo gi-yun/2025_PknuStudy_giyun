@@ -1,6 +1,6 @@
 import requests
 import json
-url = 'https://www.koreaexim.go.kr/site/program/financial/exchangeJSON?authkey=ahHMWEL1Yo4F0ABAqJyLXdrTJm30X8FL&=&data=AP01' 
+url = 'https://www.koreaexim.go.kr/site/program/financial/exchangeJSON?authkey=ahHMWEL1Yo4F0ABAqJyLXdrTJm30X8FL&searchdate=20250205&data=AP01' 
 res = requests.get(url).text
 data = json.loads(res)
 result = data[-1]['deal_bas_r']
