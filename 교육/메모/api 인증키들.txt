@@ -1,0 +1,8 @@
+api 인증키들
+
+한국수출입은행
+ahHMWEL1Yo4F0ABAqJyLXdrTJm30X8FL
+
+
+https://www.koreaexim.go.kr/site/program/financial/exchangeJSON?authkey=ahHMWEL1Yo4F0ABAqJyLXdrTJm30X8FL&searchdate=DEFAULT&data=AP01 : 사용예시
+===
