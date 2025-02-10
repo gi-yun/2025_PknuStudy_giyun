@@ -30,6 +30,10 @@ while(	){	}  =>  while :
 for(시작; 끝; 스탭	){출력	}   =>  for 	x in 리스트 :	, 	range( )
 
 
+function{  }{  }
+def이름 (    ):
+    내용
+
 
 
 
