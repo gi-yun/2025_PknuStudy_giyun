@@ -21,3 +21,14 @@ git branch -M main
 git branch
 	|
 주소에 맞게 복사
+
+
+
+
+===============================
+
+git fetch 와 git pull 
+
+git fetch 는 바뀐것만 추가된다.
+
+git pull 은 전체 파일이 들어온다.
