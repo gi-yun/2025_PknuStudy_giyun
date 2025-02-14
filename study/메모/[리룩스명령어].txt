@@ -114,3 +114,30 @@ cat:
 - cat > 파일명txt ('w' 새로 작성하기)
 - cat >> 파일명.txt('a' 추가하기)
 - cat <<'end'> dairy, txt
+
+글 작성 :
+vi, vim ,nano : 편집기
+.bashrc : 유저의 환경설정 파일
+sudo apt install cowsay
+sudo apt remove cowsay
+
+================
+Alt + Shift + D: 복제 및 분할(긴 축 기준)
+
+Alt + Shift + +: 세로 분할
+
+Alt + Shift + -: 가로 분할
+
+Alt + Shift + 방향 키: 창(pane) 크기 조정
+
+Alt + 방향 키: 창 간 이동
+
+Ctrl + Shift + W 창 종료
+=========================
+sudo systemctl status ssh
+sudo systemctl start ssh
+sudo systemctl stop ssh
+==================
+ifconfig : 주소확인
+ssh gy@localhost
+ssh gy@ip주소
