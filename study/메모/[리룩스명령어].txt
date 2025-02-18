@@ -141,3 +141,23 @@ sudo systemctl stop ssh
 ifconfig : 주소확인
 ssh gy@localhost
 ssh gy@ip주소
+==================
+sudo apt update
+sudo apt install mysql-server
+sudo systemctl status mysql
+sudo systemctl stop mysql
+sudo apt remove mysql-server
+
+=======================
+윈도우 + 파이썬 // 우분투에는 이미 있는 파이썬
+파이썬 가상
+python3 -m venv venv
+가상화 사용 : source venv/bin/activate
+나가기 : deactivate
+삭제: sudo rm -rf venv
+
+백업 pip freeze 
+복구 pip install -r requirements.txt
+
+venv3 jupyterlab 설치후 +numpy 설치, matplotlib 설치 후  백업하고
+venv4 에 환경 그대로 복구
