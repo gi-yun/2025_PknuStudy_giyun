@@ -32,3 +32,8 @@ git fetch 와 git pull
 git fetch 는 바뀐것만 추가된다.
 
 git pull 은 전체 파일이 들어온다.
+
+================================
+add . 하고 다시 제외 시킨다.
+
+git reset "파일명" 
