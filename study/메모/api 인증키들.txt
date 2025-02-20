@@ -34,3 +34,7 @@ ec2c5ff8596703e031c0a1da2a7aa610
 
 예시:
 https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key= ec2c5ff8596703e031c0a1da2a7aa610&targetDt=20200101
+==================================================================================================
+텔레그램
+8192393874:AAG29zAnVMnq4p1n_-EtrwNGdCM2KsLq1Vo
+
