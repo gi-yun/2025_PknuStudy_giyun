@@ -37,3 +37,22 @@ git pull 은 전체 파일이 들어온다.
 add . 하고 다시 제외 시킨다.
 
 git reset "파일명" 
+
+=================================
+브랜치와 머지
+
+main -> 과거 -> 2)브랜치생성 -> main -> 병합
+
+브랜치 삭제 : git branch -d 이름
+브랜치 삭제 강하게 : git branch -D 이름
+
+1)원하는 지점확인 : git log(해시값 확인)
+2)과거 : git checkout 5b24fc1
+3)확인 : git branch (브랜치 확인하기)
+4) 뉴 브랜치 생성 git checkout -b dev
+5)메인이동: git checkout main
+6)병합 : git merge dev (dev를 가져와서 병합)
+7)충돌해결: 파일에 가서 >>> HEAD부분 해결
+8) 깃 커밋과 푸시
+9)깃 커밋과 푸시
+10)원격지 브랜치 삭제 git push origin --delete dev
