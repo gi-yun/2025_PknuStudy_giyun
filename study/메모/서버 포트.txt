@@ -24,6 +24,8 @@ pkteam01:
       - '8885:8888' 
       - '8050-8059:8050-8059'
 
-ssh pkteam@pdata.iptime.org -p 222
+현 주소
+ ssh pkteam@mydb.iptime.org -p 222 
+
 
 pip install python-telegram-bot

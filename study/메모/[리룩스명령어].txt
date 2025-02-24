@@ -161,3 +161,10 @@ python3 -m venv venv
 
 venv3 jupyterlab 설치후 +numpy 설치, matplotlib 설치 후  백업하고
 venv4 에 환경 그대로 복구
+
+========================================
+nohup venv_kgy/bin/python bot_kgy.py & disown : 프로세스가 계속 실행되도록 유지 / 프로세스를 백그라운드에서 실행 / 터미널을 종료해도 프로세스가 영향을 받지 않음.
+
+ps -ef | grep python : 실행중인 모든 프로세스 찾기
+
+ps aux | grep bot_kgy.py :특정 프로세스 찾기
