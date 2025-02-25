@@ -168,3 +168,19 @@ nohup venv_kgy/bin/python bot_kgy.py & disown : 프로세스가 계속 실행되
 ps -ef | grep python : 실행중인 모든 프로세스 찾기
 
 ps aux | grep bot_kgy.py :특정 프로세스 찾기
+
+
+chatbot폴더의 내 봇 활성화
+
+source venv_kgy/bin/activate
+
+cd chatbot_kgy
+
+nohup python bot_v2.py > bot.log 2>&1 & disown
+
+
+=========================================
+복사하기
+scp: 
+scp -P 222 ./chatbot/* pkteam@mydb.iptime.org:/home/pkteam/data/chatbot_kgy/
+		하위폴더									임시파일

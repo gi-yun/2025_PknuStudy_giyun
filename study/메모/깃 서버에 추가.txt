@@ -13,3 +13,16 @@ ssh키 생성
 ssh-keygen -t rsa -b 4096 -C "kbb9554@gmail.com"
 
 sudo usermod -aG root pkteam
+
+====================================
+git reset --hard HEAD~1 가장 가까운곳 한곳으로 돌려라
+git reset (해시로그)
+
+git add -A
+
+git commit -m "커밋내용"
+
+git push -force
+
+*단 , 전에  내용 다날아감
+========================================
