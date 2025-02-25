@@ -34,7 +34,7 @@ git fetch 는 바뀐것만 추가된다.
 git pull 은 전체 파일이 들어온다.
 
 ================================
-add . 하고 다시 제외 시킨다.
+add . 하고 특정 파일 제외 시킨다.
 
 git reset "파일명" 
 
@@ -56,3 +56,7 @@ main -> 과거 -> 2)브랜치생성 -> main -> 병합
 8) 깃 커밋과 푸시
 9)깃 커밋과 푸시
 10)원격지 브랜치 삭제 git push origin --delete dev
+
+git log
+git log --oneline
+git log --oneline --graph --all --decorate
