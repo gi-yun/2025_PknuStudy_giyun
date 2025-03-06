@@ -14,3 +14,7 @@ docker images
 docker rmi 72297848456d
 
 컨테이너 생성 명령어
+docker run -itd -p 22:22 --name ubuntu01 --hostname PKNU -v D:\\kgy\\code:/home/data ubuntu:22.04
+
+
+docker exec -it ubuntu01 bash
