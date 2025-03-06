@@ -1,0 +1,186 @@
+[리룩스명령어]
+[WSL] 관리자권한 필요
+(업데이트설치)
+wsl.exe --install
+
+(확인시)
+wsl -l -v
+
+(삭제시)
+wsl --unregister Ubuntu-22.04
+wsl --shutdown
+=================
+[Ubuntu]
+/home/ys
+
+1) sudo apt update
+2) sudo apt upgrade -y
+3) python3 -V
+==================
+[명령어]
+Ctrl + C : 캔슬
+pwd : 현재경로확인  ( ~ 표시된 경로는 기본 사용자 경로)
+su : 루트권한
+sudo passwd : 비밀번호 세팅
+exit : 빠져나가기
+ls -al : 리스트 상세
+lshw : 하드웨어 정보
+lsusb : usb 정보
+htop : 프로세서 현황
+cd : 디렉토리 이동
+========================
+*명령어 몇가지: 
+~ :
+- 홈 디렉토리
+- 터미널 구동시 최초의 위치
+
+pwd : 
+- 현재경로 확인 (~ 표시된 경로는 기본 사용자 경로)
+
+su :
+- 루트 권한
+
+sudo passwd : 
+- 비밀번호 세팅
+
+ls :
+- 디렉토리 정보보기
+- ls -al 전체 몇개 있는지 확인 가능
+
+exit :
+- 나가기
+
+cd : 
+- change directory의 약자
+- 경로 이동하기
+- cd ~ :홈으로 가기
+- cd .. 하위 폴더 이동
+
+/ :
+- FHS의 가장 최상단 디렉토리이며 Root 디렉토리라고도 한다.
+- 시스템의 근간을 이루는 가장 중요한 디렉토리로 파티션 설정 시 반드시 존재해야하며 절대경로의 기준이 되는 디렉토리이다.
+
+/bin:
+- 리눅스의 기본적인 명령어가 저장된 디렉토리
+- 시스템을 운영하는데 기본적인 명령어들이 모여있다
+- 서브 디렉토리가 없다.
+
+lshw :
+- 하드웨어 정보
+
+lsusb :
+- usb 정보
+
+Ctrl + C : 
+- 캔슬
+
+top :
+- 현재 OS의 상태를 나타내주는 CLI 어플리케이션
+- htop : 컬러로 확인가능
+
+/home:
+- 사용자 홈 디렉토리, 일반 사용자의 홈 디렉토리가 만들어 지는 곳
+
+/boot:
+- 부트 설정 파일과 lilo를 제외한 부트 관련 모든 파일을 모아놓은 디렉토리
+
+/dev:
+- 시스템의 모든 디바이스를 엑세스할 수 있는 파일들을 모아놓은 디렉토리
+
+/etc:
+- 호스트의 설정 파일을 모아놓은 디렉토리
+
+/lib:
+- 시스템 부트 때 필요하거나 /bin 디렉토리 내 명령어들의 실행에 필요한 공유 라이브러리들을 모아놓은 디렉토리
+
+/usr:
+- 일반 사용자들을 위한 대부분의 프로그램 라이브러리 파일이 위치한다.
+- /user/bin: 일반 사용자들이 사용가능한 명령어 파일들이 존재하는 디렉토리
+- /user/local: 새로운 프로그램들이 설치되는 공간
+
+mkdir :
+- 디렉토리 생성
+rm : 
+-파일 또는 디렉토리 삭제
+- rm -r 폴더명
+- rm -rf 폴더명(강력함)
+
+echo :
+- "하고싶은말" 
+- "하고싶은말 > 파일명.txt(파일로 저장됨)
+
+cat:
+- cat 파일명.txt(내용 읽어오기)
+- cat > 파일명txt ('w' 새로 작성하기)
+- cat >> 파일명.txt('a' 추가하기)
+- cat <<'end'> dairy, txt
+
+글 작성 :
+vi, vim ,nano : 편집기
+.bashrc : 유저의 환경설정 파일
+sudo apt install cowsay
+sudo apt remove cowsay
+
+================
+Alt + Shift + D: 복제 및 분할(긴 축 기준)
+
+Alt + Shift + +: 세로 분할
+
+Alt + Shift + -: 가로 분할
+
+Alt + Shift + 방향 키: 창(pane) 크기 조정
+
+Alt + 방향 키: 창 간 이동
+
+Ctrl + Shift + W 창 종료
+=========================
+sudo systemctl status ssh
+sudo systemctl start ssh
+sudo systemctl stop ssh
+==================
+ifconfig : 주소확인
+ssh gy@localhost
+ssh gy@ip주소
+==================
+sudo apt update
+sudo apt install mysql-server
+sudo systemctl status mysql
+sudo systemctl stop mysql
+sudo apt remove mysql-server
+
+=======================
+윈도우 + 파이썬 // 우분투에는 이미 있는 파이썬
+파이썬 가상
+python3 -m venv venv
+가상화 사용 : source venv/bin/activate
+나가기 : deactivate
+삭제: sudo rm -rf venv
+
+백업 pip freeze 
+복구 pip install -r requirements.txt
+
+venv3 jupyterlab 설치후 +numpy 설치, matplotlib 설치 후  백업하고
+venv4 에 환경 그대로 복구
+
+========================================
+nohup venv_kgy/bin/python bot_kgy.py & disown : 프로세스가 계속 실행되도록 유지 / 프로세스를 백그라운드에서 실행 / 터미널을 종료해도 프로세스가 영향을 받지 않음.
+
+ps -ef | grep python : 실행중인 모든 프로세스 찾기
+
+ps aux | grep bot_kgy.py :특정 프로세스 찾기
+
+
+chatbot폴더의 내 봇 활성화
+
+source venv_kgy/bin/activate
+
+cd chatbot_kgy
+
+nohup python bot_v2.py > bot.log 2>&1 & disown
+
+
+=========================================
+복사하기
+scp: 
+scp -P 222 ./chatbot/* pkteam@mydb.iptime.org:/home/pkteam/data/chatbot_kgy/
+		하위폴더									임시파일

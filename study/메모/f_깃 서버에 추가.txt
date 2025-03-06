@@ -1,0 +1,28 @@
+sudo apt install git -> git init -> 레포지토리 커밋 (
+.env 꼭 해주기
+=============================
+외부에 
+포크(그 팀 온라인 -> 내, 내팀 온라인 -> 내 로컬),
+클론(내, 내팀 온라인 -> 내 로컬)
+PR
+
+
+=================================
+
+ssh키 생성
+ssh-keygen -t rsa -b 4096 -C "kbb9554@gmail.com"
+
+sudo usermod -aG root pkteam
+
+====================================
+git reset --hard HEAD~1 가장 가까운곳 한곳으로 돌려라
+git reset (해시로그)
+
+git add -A
+
+git commit -m "커밋내용"
+
+git push -force
+
+*단 , 전에  내용 다날아감
+========================================
