@@ -17,4 +17,18 @@ docker rmi 72297848456d
 docker run -itd -p 22:22 --name ubuntu01 --hostname PKNU -v D:\\kgy\\code:/home/data ubuntu:22.04
 
 
+
+
 docker exec -it ubuntu01 bash
+
+
+docker run -itd --name ju01 --hostname PKNU --user root -p 8888:8888 -v D:\\kgy\\code:/home/jovyan/data jupyter/pyspark-notebook
+
+
+docker logs ju01
+
+passwd 1234
+
+adduser pkuser
+1234
+1234
