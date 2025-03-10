@@ -1,0 +1,14 @@
+포트가 계속 막힐 때!
+
+관리자 권한으로 터미널을 열고
+
+
+net stop winnat 을 하면 모든 port가 막힌다
+
+
+
+apt install -y fonts-nanum
+fc-cache -fv
+rm ~/.cache/matplotlib -rf
+
+docker run -itd --name myjupyter --hostname PKNU -p 22:22 -p 8888:8888 -v d:\\kgy\\code:/home/pkys/data ky
