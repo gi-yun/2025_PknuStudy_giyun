@@ -3,12 +3,17 @@
 관리자 권한으로 터미널을 열고
 
 
-net stop winnat 을 하면 모든 port가 막힌다
+net stop winnat 을 하면 모든 port 막힘
 
 
+# 우분투에서 포트 찾기
+netstat -tulpn | grep :22
 
-apt install -y fonts-nanum
-fc-cache -fv
-rm ~/.cache/matplotlib -rf
+# 더 자세히 찾기
+sudo lsof -i :22
 
-docker run -itd --name myjupyter --hostname PKNU -p 22:22 -p 8888:8888 -v d:\\kgy\\code:/home/pkys/data ky
+# 사용중인 사람 알아내기
+ps aux | grep 251
+
+# 터미널에서 id 검색
+Get-Process -Id 13764 

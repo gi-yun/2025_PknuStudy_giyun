@@ -33,8 +33,33 @@ docker run -itd -p 22:22 --name ubuntu01 --hostname PKNU -v D:\\kgy\\code:/home/
 
 docker exec -it ubuntu01 bash
 
-
+#컨테이너 생성 예시
 docker run -itd --name ju01 --hostname PKNU --user root -p 8888:8888 -v D:\\kgy\\code:/home/jovyan/data jupyter/pyspark-notebook
+
+
+# 컨테이너 생성
+docker run -itd --name myjupyter --hostname PKNU -p 22:22 -p 8888:8888 -v d:\\kgy\\code:/home/pkys/data ky
+
+
+# 컨테이너 안 나눔 폰트 하는방법
+apt install -y fonts-nanum
+fc-cache -fv
+rm ~/.cache/matplotlib -rf
+
+# jupyter에 사용 방법
+!sudo apt-get install -y fonts-nanum
+!sudo fc-cache -fv
+!rm ~/.cache/matplotilib -rf
+
+
+#터미널에서 안쓰고 잇는 컨테이너 지움
+docker system prune 
+# 터미널에서 안쓰고 있는 이미지 컨테이너 지움
+docker system prune -a 
+
+# 도커파일 잇는 경로안에다 빌드업을 한다. 
+docker build -t ky:1.0 . 
+
 
 
 docker logs ju01
