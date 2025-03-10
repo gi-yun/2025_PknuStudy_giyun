@@ -10,11 +10,23 @@ docker container ps -a
 이미지 확인
 docker images
 
+켄터이너 중지
+docker stop 
+
+컨테이너 삭제
+Docker rm
+
 이미지 삭제
 docker rmi 72297848456d
 
 컨테이너 생성 명령어
 docker run -itd -p 22:22 --name ubuntu01 --hostname PKNU -v D:\\kgy\\code:/home/data ubuntu:22.04
+
+
+ sudo apt-get install -y fonts-annum
+ sudo fc-cache -fv
+ rm ~/.cache/matplotlib rf
+
 
 
 
