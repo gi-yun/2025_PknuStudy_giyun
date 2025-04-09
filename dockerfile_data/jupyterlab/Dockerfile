@@ -32,4 +32,4 @@ RUN pip install --upgrade pip && pip install jupyterlab
 
 # CMD^[" "]형태로 해야한다. *공백 꼭 해줘야함
 # ssh 서버 실행 및 주피터랩 가동(외부접속가능)
-CMD ["/bin/bash", "-c", "service ssh start && python3 -m jupyterlab --ip=0.0.0.0 --port=8888 --allow-root"]
+CMD ["/bin/bash", "-c", "service ssh start && python3 -m jupyterlab --ip=0.0.0.0 --port=8888 --allow-root --FileContentsManager.delete_to_trash=False"]

@@ -1,0 +1,67 @@
+services:
+  jupyterlab: 
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: jupyterlab
+    hostname: JUPYTERLAB
+    command: /bin/bash -c "service ssh start && python3 -m jupyterlab --ip=0.0.0.0 --port=8888 --allow-root --FileContentsManager.delete_to_trash=False"
+    ports:
+      - "8888:8888" # JupyterLab 기본 포트
+      - "22:22" # SSH 기본 포트
+    volumes:
+      - D:\kgy\code:/home/pkdata/data # 호스트와 컨테이너 간의 데이터 공유
+    networks:
+      - db_net # db_net 네트워크 사용
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    ports:
+      - "3306:3306" # MySQL 기본 포트
+    command: mysqld
+    environment:
+      MYSQL_ROOT_PASSWORD: "1234" # MySQL root 비밀번호
+    networks:
+    - db_net # db_net 네트워크 사용
+    volumes:    
+      - mysql_data:/var/lib/mysql # 도커 볼륨과 컨테이너 내부 저장공간 연결 설정
+      - mysql_conf:/etc/mysql/mysql.conf.d
+
+  mongodb:
+    image: mongodb/mongodb-community-server:8.0.3-ubi8
+    container_name: mongodb
+    hostname: MONGODB
+    ports:
+      - "27017:27017" # MongoDB 기본 포트
+    networks:
+      - db_net # db_net 네트워크 사용
+    volumes:
+      - mongodb_data:/var/lib/mongodb # MongoDB 데이터 저장소
+
+  oracle-db:
+    image: gvenzl/oracle-xe:21-slim
+    container_name: oracle
+    ports:
+      - "1521:1521" # Oracle DB 기본 포트
+      - "5500:5500" # 웹포트 매니저
+    environment:
+      ORACLE_PASSWORD: oracle # Oracle DB 비밀번호
+      APP_USER: pknu # Oracle DB 사용자
+      APP_USER_PASSWORD: 1234 # Oracle DB 사용자 비밀번호
+    networks:
+        - db_net # 내부와 통신이 가능하도록 db_net 이름의 네트워크 설정 
+    volumes:
+      - oracle_data:/opt/oracle/oradata # Oracle DB 데이터 저장소
+
+
+networks:
+  db_net: 
+    driver: bridge # 브릿지 네트워크 사용
+
+volumes:
+  mysql_data: # MySQL 데이터 저장소
+  mysql_conf: # MySQL 설정 파일 저장소
+  mongodb_data: # MongoDB 데이터 저장소
+  oracle_data: # Oracle DB 데이터 저장소
+    
