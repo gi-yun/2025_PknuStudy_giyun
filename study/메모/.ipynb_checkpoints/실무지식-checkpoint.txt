@@ -1,0 +1,15 @@
+실무지식
+
+선입선출 FIFO - Queue 큐
+
+후입선출 LIFO - stack 스택
+
+
+
+Create
+Read
+Update
+Delete
+
+=CRUD 만 되면 사실상 다된것
+

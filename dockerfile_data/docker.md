@@ -196,7 +196,11 @@
     <img src="./image/docker013.png" width="500">
     - nano 설치 용도 
     <img src="./image/docker014.png" width="500">
+    <img src="./image/docker014.png" width="500">
     - 사용할 스키마와 테이블을 을 읽어본 모습
+
+- 실습 파일
+    [Mysql주피터실습](./ref/py12_CRUD1_mysql.ipynb)
 
 
 
@@ -281,6 +285,79 @@
     [NEQ]/[NE] <>, !, NOT : 다르다 
     ```
 
+- Mongodb 접속
+    - jupyterlab에서 연결시도
+    <img src="./image/docker016.png" width="800">
+    - 연결 실패 시 나오는 에러
+    <img src="./image/docker017.png" width="800">
+    - localhost로 바꿔주면 된다.
+- Mongodb json 파일 데이터 넣기 
+       - `mongodbcompass` 에 접속  
+    <img src="./image/docker018.png" width="500">
+    -  옆 사이드 바에서 사용할 스키마 클릭후 (+) 클릭 
+    <img src="./image/docker019.png" width="500">
+    - 해당 창이 뜨면 사용할 DB이름과 콜렉션 이름 기입
+    <img src="./image/docker020.png" width="500">
+    - 다시 화면 가운데에 보면 +ADD DATA 클릭 하고 파일 선택 후 완료
+
+- Mongodb 터미널에서 들어가기
+    <img src="./image/docker021.png" width="500">
+    - 밑줄 을 입력후 들어가서 사용할 db 를 입력하고 insert 및 db관리 가능
+
+- 실습 파일
+    [Mongodb주피터실습](./ref/py12_CRUD2_mongodb.ipynb)
+
+- 오라클 실습
+    [Oracle주피터실습](./ref/py12_CRUD3_oracle.ipynb)
+- 3개를 동시에 사용하는 DB만들기
+    [Database주피터실습](./ref/py12_CRUD4_totalDatabase.ipynb)
+
+
+
+
+
+### 3일차
+
+- 인터넷 망을 이용한 DB실습
+    [netDB](./ref/py12_CRUD5_netdb.ipynb)
+    <br>
+
+- 셀레니움을 활용한 크롤링 실습
+    - 환경설정
+        - https://developer.chrome.com/docs/chromedriver/downloads?hl=ko 해당 사이트에 접속
+    <img src="./image/docker022.png" width="500">
+        - 사진에 표시한 링크 클릭
+    <img src="./image/docker023.png" width="500">
+        - 표시한 테스트 크롬과 크롬드라이버 설치 (링크는 복사해서 주소에 띄우면 설치된다.)
+    <br>
+    <img src="./image/docker024.png" width="500">
+        - 후에 실습 파일에 들어가서 경로 맞춰주기 (드라이버 랑 크롬.exe 파일은 빼준다.)
+    <br>
+    <img src="./image/docker027.png" width="500">
+         - 경로 지정!! (에러났었음)
+    <img src="./image/docker025.png" width="500">
+    <img src="./image/docker026.png" width="500">
+        - 우리는 스타벅스로 실습을 을 했고 오른쪽 마우스 검사하기로 해당 select 가 어딘지 찾는다.
+    - 실습
+        [셀레니움주피터실습](./ref/py13_셀레니움크롤링.ipynb)
+
+    
+    
+    
+
+
+
+
+
+### hadoop
+
+<img src="./image/docker028.png" width="500">
+<img src="./image/docker029.png" width="500">
+<img src="./image/docker030.png" width="500">
+
+       ```cmd
+       docker run -itd --name hdfs_ys --hostname datanode -p 9870:9870 -p 8025:8025 -p 8088:8088 -p 22:22 -v  D:/dockerdata/datanode1:/data/hadoop/dfs/data hadoop:1.0
+       ```
 
     
 
