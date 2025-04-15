@@ -113,7 +113,7 @@ cat:
 - cat 파일명.txt(내용 읽어오기)
 - cat > 파일명txt ('w' 새로 작성하기)
 - cat >> 파일명.txt('a' 추가하기)
-- cat <<'end'> dairy, txt
+- cat <<'end'> dairy .txt
 
 글 작성 :
 vi, vim ,nano : 편집기
