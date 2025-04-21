@@ -142,7 +142,7 @@ def schedule_jobs(application):
         import asyncio
         asyncio.run(send_lunch())  # 🔥 핵심 비동기 처리
 
-    scheduler.add_job(job, 'cron', hour=12, minute=00, misfire_grace_time=60)
+    scheduler.add_job(job, 'cron', hour=12, minute=00, misfire_grace_time=300)
 
 # 테스트
 async def testlunch(update: Update, context: CallbackContext):

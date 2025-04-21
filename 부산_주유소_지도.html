@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_0378d1d5c3d99be2f4f569316996e23b {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_0378d1d5c3d99be2f4f569316996e23b" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_0378d1d5c3d99be2f4f569316996e23b = L.map(
+                "map_0378d1d5c3d99be2f4f569316996e23b",
+                {
+                    center: [35.2, 129.07],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_f17b7c56859d05b001b2942319b85dcc = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_f17b7c56859d05b001b2942319b85dcc.addTo(map_0378d1d5c3d99be2f4f569316996e23b);
+        
+    
+            var marker_e1fb4ae6f9ed42c6fc3d35a9e0d2a183 = L.marker(
+                [35.2074394, 129.0715907],
+                {
+}
+            ).addTo(map_0378d1d5c3d99be2f4f569316996e23b);
+        
+    
+            var icon_923093184ecf39828f67fd47eaed80c1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "oil",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7743f79c18042fdd28f510bebed3935b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ed59b9b8f1fda7f330d38427dcaa3f26 = $(`<div id="html_ed59b9b8f1fda7f330d38427dcaa3f26" style="width: 100.0%; height: 100.0%;">부산 동래구 충렬대로 95<br>휘발유: 1489원</div>`)[0];
+                popup_7743f79c18042fdd28f510bebed3935b.setContent(html_ed59b9b8f1fda7f330d38427dcaa3f26);
+            
+        
+
+        marker_e1fb4ae6f9ed42c6fc3d35a9e0d2a183.bindPopup(popup_7743f79c18042fdd28f510bebed3935b)
+        ;
+
+        
+    
+    
+            marker_e1fb4ae6f9ed42c6fc3d35a9e0d2a183.bindTooltip(
+                `<div>
+                     1489
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e1fb4ae6f9ed42c6fc3d35a9e0d2a183.setIcon(icon_923093184ecf39828f67fd47eaed80c1);
+            
+    
+            var marker_7c528d4485e61ea48f941ef1886f1983 = L.marker(
+                [35.2058571, 129.0738774],
+                {
+}
+            ).addTo(map_0378d1d5c3d99be2f4f569316996e23b);
+        
+    
+            var icon_0b75f60656e6f0cda8cffb67d6119dbf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "oil",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1db4e6a58670e1b3dfee78490be71339 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_426033163b23cb10337333ff7c29bc19 = $(`<div id="html_426033163b23cb10337333ff7c29bc19" style="width: 100.0%; height: 100.0%;">부산 동래구 충렬대로 124<br>휘발유: 1499원</div>`)[0];
+                popup_1db4e6a58670e1b3dfee78490be71339.setContent(html_426033163b23cb10337333ff7c29bc19);
+            
+        
+
+        marker_7c528d4485e61ea48f941ef1886f1983.bindPopup(popup_1db4e6a58670e1b3dfee78490be71339)
+        ;
+
+        
+    
+    
+            marker_7c528d4485e61ea48f941ef1886f1983.bindTooltip(
+                `<div>
+                     1499
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7c528d4485e61ea48f941ef1886f1983.setIcon(icon_0b75f60656e6f0cda8cffb67d6119dbf);
+            
+    
+            var marker_bb8353f3efe8e06ef9999a8b618156c9 = L.marker(
+                [35.2026025, 129.0989642],
+                {
+}
+            ).addTo(map_0378d1d5c3d99be2f4f569316996e23b);
+        
+    
+            var icon_88e7c7f5ede1bfba32dc3531bc0cf3dc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "oil",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5bb91d79ee1ca5589bc04776df2998d6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5993618d36c72bc3899db9273b4f5172 = $(`<div id="html_5993618d36c72bc3899db9273b4f5172" style="width: 100.0%; height: 100.0%;">부산 동래구 반송로 245<br>휘발유: 1499원</div>`)[0];
+                popup_5bb91d79ee1ca5589bc04776df2998d6.setContent(html_5993618d36c72bc3899db9273b4f5172);
+            
+        
+
+        marker_bb8353f3efe8e06ef9999a8b618156c9.bindPopup(popup_5bb91d79ee1ca5589bc04776df2998d6)
+        ;
+
+        
+    
+    
+            marker_bb8353f3efe8e06ef9999a8b618156c9.bindTooltip(
+                `<div>
+                     1499
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bb8353f3efe8e06ef9999a8b618156c9.setIcon(icon_88e7c7f5ede1bfba32dc3531bc0cf3dc);
+            
+    
+            var marker_4529df96af4f000f5337d230037fddfa = L.marker(
+                [35.2064321, 129.0739197],
+                {
+}
+            ).addTo(map_0378d1d5c3d99be2f4f569316996e23b);
+        
+    
+            var icon_0a2f44e54b63422ae34f15908b05ed78 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "oil",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1251a3ca982137efc20fe81d0da51c9b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bc632131739a525b6582edb677c16490 = $(`<div id="html_bc632131739a525b6582edb677c16490" style="width: 100.0%; height: 100.0%;">부산 동래구 충렬대로 121 (온천동)<br>휘발유: 1499원</div>`)[0];
+                popup_1251a3ca982137efc20fe81d0da51c9b.setContent(html_bc632131739a525b6582edb677c16490);
+            
+        
+
+        marker_4529df96af4f000f5337d230037fddfa.bindPopup(popup_1251a3ca982137efc20fe81d0da51c9b)
+        ;
+
+        
+    
+    
+            marker_4529df96af4f000f5337d230037fddfa.bindTooltip(
+                `<div>
+                     1499
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4529df96af4f000f5337d230037fddfa.setIcon(icon_0a2f44e54b63422ae34f15908b05ed78);
+            
+    
+            var marker_997b0c1386df7ec6f6ccca10a40a2c67 = L.marker(
+                [35.2067787, 129.1027076],
+                {
+}
+            ).addTo(map_0378d1d5c3d99be2f4f569316996e23b);
+        
+    
+            var icon_eab74416d6f784914681c6c33c93467d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "oil",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_aea0fd9f9ea51c4094b35072b464323b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2b8634f70c69eed3bd186110d77132eb = $(`<div id="html_2b8634f70c69eed3bd186110d77132eb" style="width: 100.0%; height: 100.0%;">부산 동래구 반송로 303 (명장동)<br>휘발유: 1499원</div>`)[0];
+                popup_aea0fd9f9ea51c4094b35072b464323b.setContent(html_2b8634f70c69eed3bd186110d77132eb);
+            
+        
+
+        marker_997b0c1386df7ec6f6ccca10a40a2c67.bindPopup(popup_aea0fd9f9ea51c4094b35072b464323b)
+        ;
+
+        
+    
+    
+            marker_997b0c1386df7ec6f6ccca10a40a2c67.bindTooltip(
+                `<div>
+                     1499
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_997b0c1386df7ec6f6ccca10a40a2c67.setIcon(icon_eab74416d6f784914681c6c33c93467d);
+            
+    
+            var marker_d4ef3a69810016633bc282373f22c819 = L.marker(
+                [35.1123058, 129.0387887],
+                {
+}
+            ).addTo(map_0378d1d5c3d99be2f4f569316996e23b);
+        
+    
+            var icon_0a489db8f3c5c329194fd505306e24b6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "oil",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d69af329fcbed52248f42dba65b0986c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b601e82e7119828dffdfc6fa83a755da = $(`<div id="html_b601e82e7119828dffdfc6fa83a755da" style="width: 100.0%; height: 100.0%;">부산 동구 중앙대로 168 (초량동)<br>휘발유: 1998원</div>`)[0];
+                popup_d69af329fcbed52248f42dba65b0986c.setContent(html_b601e82e7119828dffdfc6fa83a755da);
+            
+        
+
+        marker_d4ef3a69810016633bc282373f22c819.bindPopup(popup_d69af329fcbed52248f42dba65b0986c)
+        ;
+
+        
+    
+    
+            marker_d4ef3a69810016633bc282373f22c819.bindTooltip(
+                `<div>
+                     1998
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d4ef3a69810016633bc282373f22c819.setIcon(icon_0a489db8f3c5c329194fd505306e24b6);
+            
+    
+            var marker_674bbf54af0d9c67e340a997f85325ec = L.marker(
+                [35.0893564, 128.8975986],
+                {
+}
+            ).addTo(map_0378d1d5c3d99be2f4f569316996e23b);
+        
+    
+            var icon_6d36954122c056a34329e865977dccbf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "oil",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4f47303eb993548abec9d7707635da16 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9c12cb2a8a64f625685ec3af35419f5d = $(`<div id="html_9c12cb2a8a64f625685ec3af35419f5d" style="width: 100.0%; height: 100.0%;">부산 강서구 르노삼성대로 372<br>휘발유: 1899원</div>`)[0];
+                popup_4f47303eb993548abec9d7707635da16.setContent(html_9c12cb2a8a64f625685ec3af35419f5d);
+            
+        
+
+        marker_674bbf54af0d9c67e340a997f85325ec.bindPopup(popup_4f47303eb993548abec9d7707635da16)
+        ;
+
+        
+    
+    
+            marker_674bbf54af0d9c67e340a997f85325ec.bindTooltip(
+                `<div>
+                     1899
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_674bbf54af0d9c67e340a997f85325ec.setIcon(icon_6d36954122c056a34329e865977dccbf);
+            
+    
+            var marker_20731e2c212a3bf304722e584b4709be = L.marker(
+                [35.0821804, 129.0125945],
+                {
+}
+            ).addTo(map_0378d1d5c3d99be2f4f569316996e23b);
+        
+    
+            var icon_ff3dc862aa8878797a0aff6aa5bd52b1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "oil",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_96e94c597591e4f9ebd732a1e9afa051 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8880179aa4e081488b740c4b2539b631 = $(`<div id="html_8880179aa4e081488b740c4b2539b631" style="width: 100.0%; height: 100.0%;">부산 서구 감천로 227<br>휘발유: 1888원</div>`)[0];
+                popup_96e94c597591e4f9ebd732a1e9afa051.setContent(html_8880179aa4e081488b740c4b2539b631);
+            
+        
+
+        marker_20731e2c212a3bf304722e584b4709be.bindPopup(popup_96e94c597591e4f9ebd732a1e9afa051)
+        ;
+
+        
+    
+    
+            marker_20731e2c212a3bf304722e584b4709be.bindTooltip(
+                `<div>
+                     1888
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_20731e2c212a3bf304722e584b4709be.setIcon(icon_ff3dc862aa8878797a0aff6aa5bd52b1);
+            
+    
+            var marker_df54014e536d1d68089388d9eea897ff = L.marker(
+                [35.0742783, 129.0064934],
+                {
+}
+            ).addTo(map_0378d1d5c3d99be2f4f569316996e23b);
+        
+    
+            var icon_faa8a9a6624d95986b7681c7032a2986 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "oil",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5408694390e60edf73b1ef952bd062b4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_60781066196847e7b36816452e42b988 = $(`<div id="html_60781066196847e7b36816452e42b988" style="width: 100.0%; height: 100.0%;">부산 서구 원양로 260<br>휘발유: 1868원</div>`)[0];
+                popup_5408694390e60edf73b1ef952bd062b4.setContent(html_60781066196847e7b36816452e42b988);
+            
+        
+
+        marker_df54014e536d1d68089388d9eea897ff.bindPopup(popup_5408694390e60edf73b1ef952bd062b4)
+        ;
+
+        
+    
+    
+            marker_df54014e536d1d68089388d9eea897ff.bindTooltip(
+                `<div>
+                     1868
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_df54014e536d1d68089388d9eea897ff.setIcon(icon_faa8a9a6624d95986b7681c7032a2986);
+            
+    
+            var marker_8423c2818f806492c9cb81e1c7997da2 = L.marker(
+                [35.0912922, 129.0493362],
+                {
+}
+            ).addTo(map_0378d1d5c3d99be2f4f569316996e23b);
+        
+    
+            var icon_a4e1176f8a4797a9362361940da9f8cc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "oil",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6bfdcfc912a994eb380716808b8713af = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2e507091eefdaaf9130c05761c12af1d = $(`<div id="html_2e507091eefdaaf9130c05761c12af1d" style="width: 100.0%; height: 100.0%;">부산 영도구 태종로 181 (봉래동4가)<br>휘발유: 1848원</div>`)[0];
+                popup_6bfdcfc912a994eb380716808b8713af.setContent(html_2e507091eefdaaf9130c05761c12af1d);
+            
+        
+
+        marker_8423c2818f806492c9cb81e1c7997da2.bindPopup(popup_6bfdcfc912a994eb380716808b8713af)
+        ;
+
+        
+    
+    
+            marker_8423c2818f806492c9cb81e1c7997da2.bindTooltip(
+                `<div>
+                     1848
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8423c2818f806492c9cb81e1c7997da2.setIcon(icon_a4e1176f8a4797a9362361940da9f8cc);
+            
+</script>
+</html>
