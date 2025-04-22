@@ -1,0 +1,30 @@
+docker compose up -d: 빌드 후 가동
+docker compose down : 정지 후 삭제
+docker compose start : 시작
+docker compose stop : 정지
+
+==================================================
+docker network connect kafka_default zep01
+
+==================================================
+docker exec -it kafka bash
+ls
+cd opt
+ls
+cd kafka_2.13-2.8.1/
+ls
+cd bin
+cd ~
+pwd
+
+kafka-topics.sh --create --topic smart-car --bootstrap-server kafka:9092 --replication-factor 1 --partitions 1
+
+
+kafka-console-producer.sh --topic smart-car --broker-list kafka:9092
+> 데이터가 마구 전송 됨
+> 택배가 도착하였습니다.
+==============================================
+(위와 다른 카프카 창)
+kafka-console-consumer.sh --topic smart-car --bootstrap-server kafka:9092
+데이터가 마구 전송됨
+택배가 도착하였습니다.

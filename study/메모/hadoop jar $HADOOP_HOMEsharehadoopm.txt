@@ -1,0 +1,5 @@
+f hadoop jar $HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.4.1.jar 
+
+
+
+hdfs dfs -cat /user/hadoop/wordcount-output/part -r-00000
