@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>로또 번호 추천기</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    h1 {
+      text-align: center;
+      padding: 30px 0 10px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 40px;
+      padding: 20px 40px;
+      flex-wrap: wrap;
+    }
+
+    #chartContainer {
+      width: 500px;
+      height: 800px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .right-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      margin-bottom: 20px;
+      cursor: pointer;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+    }
+
+    .lotto-set {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 12px;
+      gap: 10px;
+    }
+
+    .ball {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .yellow { background-color: #fbc02d; }
+    .blue   { background-color: #64b5f6; }
+    .red    { background-color: #ef5350; }
+    .gray   { background-color: #9e9e9e; }
+    .green  { background-color: #B0D840; }
+  </style>
+</head>
+<body>
+
+  <h1>🎯 로또 번호 추천기</h1>
+
+  <div class="container">
+    <!-- 차트 영역 -->
+    <div id="chartContainer">
+      <canvas id="frequencyChart"></canvas>
+    </div>
+
+    <!-- 추천 번호 영역 -->
+    <div class="right-section">
+      <button onclick="getRecommendations()">추천 번호 보기</button>
+      <div id="result"></div>
+    </div>
+  </div>
+
+  <script>
+    let chartInstance = null;
+
+    // 추천 번호 보기
+    function getRecommendations() {
+      fetch("/lotto/recommend")
+        .then(res => res.json())
+        .then(data => {
+          const resultDiv = document.getElementById("result");
+          resultDiv.innerHTML = "";
+
+          data.forEach(set => {
+            const row = document.createElement("div");
+            row.className = "lotto-set";
+
+            set.slice(0, 6).forEach(num => {
+              const ball = document.createElement("div");
+              ball.className = "ball " + getColorClass(num);
+              ball.textContent = num;
+              ball.setAttribute("data-num", num); // ⭐ 마우스 이벤트용
+              ball.addEventListener("mouseenter", () => highlightBar(num));
+              ball.addEventListener("mouseleave", resetBar);
+              row.appendChild(ball);
+            });
+
+            resultDiv.appendChild(row);
+          });
+        });
+    }
+
+    // 번호 색상
+    function getColorClass(num) {
+      if (num <= 10) return "yellow";
+      if (num <= 20) return "blue";
+      if (num <= 30) return "red";
+      if (num <= 40) return "gray";
+      return "green";
+    }
+
+    // 차트 그리기
+    fetch("/lotto/frequency")
+      .then(res => res.json())
+      .then(freqs => {
+        const labels = [], data = [], backgroundColors = [];
+
+        for (let i = 1; i <= 45; i++) {
+          labels.push(i.toString());
+          data.push(freqs[i] || 0);
+
+          if (i <= 10) backgroundColors.push('#fbc02d');
+          else if (i <= 20) backgroundColors.push('#64b5f6');
+          else if (i <= 30) backgroundColors.push('#ef5350');
+          else if (i <= 40) backgroundColors.push('#9e9e9e');
+          else backgroundColors.push('#B0D840');
+        }
+
+        const ctx = document.getElementById("frequencyChart").getContext("2d");
+        chartInstance = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: labels,
+            datasets: [{
+              label: '출현 횟수',
+              data: data,
+              backgroundColor: backgroundColors,
+              borderRadius: 4,
+              barThickness: 14
+            }]
+          },
+          options: {
+            indexAxis: 'y',
+            responsive: true,
+            maintainAspectRatio: false,
+            layout: {
+              padding: {
+                top: 10,
+                bottom: 10,
+                left: 20,
+                right: 20
+              }
+            },
+            plugins: {
+              // ✅ 여기서부터 제목 옵션
+              title: {
+                display: true,
+                text: '역대 번호별 통계',
+                font: {
+                  size: 20,
+                  weight: 'bold'
+                },
+                padding: {
+                  bottom: 20
+                }
+              },
+              // ✅ 여기까지 제목 옵션
+              legend: { display: false },
+              tooltip: {
+                callbacks: {
+                  label: (ctx) => ` ${ctx.label}번: ${ctx.raw}회`
+                }
+              }
+            },
+            scales: {
+              x: {
+                beginAtZero: true,
+                title: {
+                  display: true,
+                  text: '출현 횟수'
+                }
+              },
+              y: {
+                title: {
+                  display: true,
+                  text: '번호',
+                  rotation: 0
+                },
+                ticks: {
+                  autoSkip: false
+                }
+              }
+            }
+          }
+        });
+      });
+
+    // 추천 번호 마우스오버 시 차트 강조
+    function highlightBar(number) {
+      const idx = chartInstance.data.labels.indexOf(number.toString());
+      if (idx !== -1) {
+        chartInstance.setActiveElements([
+          { datasetIndex: 0, index: idx }
+        ]);
+        chartInstance.tooltip.setActiveElements([
+          { datasetIndex: 0, index: idx }
+        ], { x: 0, y: 0 });
+        chartInstance.update();
+      }
+    }
+
+    function resetBar() {
+      chartInstance.setActiveElements([]);
+      chartInstance.tooltip.setActiveElements([], { x: 0, y: 0 });
+      chartInstance.update();
+    }
+  </script>
+</body>
+</html>

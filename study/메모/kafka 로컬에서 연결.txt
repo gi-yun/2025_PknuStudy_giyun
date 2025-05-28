@@ -27,3 +27,6 @@ services:
 컨슈머
 	1) kafka-topics.sh --bootstrap-server 210.119.14.56:9092 --list 체크하기
 	2) kafka-console-consumer.sh --topic smart-car --bootstrap-server 210.119.14.56:9092 접속하기
+
+
+kafka-console-consumer.sh --topic smart-data --bootstrap-server mydb.iptime.org:9092
