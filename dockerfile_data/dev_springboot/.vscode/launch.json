@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "My01Application",
+            "request": "launch",
+            "mainClass": "com.pknu.my01.My01Application",
+            "projectName": "my01"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-MyspringApplication<myspring>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.pknu.myspring.MyspringApplication",
+            "projectName": "myspring",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
