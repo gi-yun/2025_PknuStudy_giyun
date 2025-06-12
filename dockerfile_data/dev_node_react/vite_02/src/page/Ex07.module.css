@@ -1,0 +1,10 @@
+.ex7-div{
+    width: "200px";
+    height: "200px";
+    border-Radius:"50%";
+    background-color: "coral";
+}
+
+.ex7-div ul li {
+    background-color: yellow;
+}

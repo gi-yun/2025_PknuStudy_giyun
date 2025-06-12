@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  </head>
+  <body>
+    <div th:replace="~{fragments/gohome::goToHome}"></div>
+    <h1>붕어빵가격표</h1>
+    <p>맛: <span th:text="${슈크림.flavor}">맛맛데이터</span></p>
+    <p>가격: <span th:text="${슈크림.price}">가격데이터</span></p>
+    <p>생산일짜: <span th:text="${슈크림.madeDate}">만든날짜데이터</span></p>
+    <hr>
+    <p>맛: <span th:text="${팥.flavor}">맛데이터</span></p>
+    <p>가격: <span th:text="${팥.price}">가격데이터</span></p>
+    <p>생산일짜: <span th:text="${팥.madeDate}">만든날짜데이터</span></p>
+  </body>
+</html>       

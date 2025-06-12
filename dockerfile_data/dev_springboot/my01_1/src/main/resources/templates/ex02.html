@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      tr, td {
+        background-color: aquamarine;
+        text-align: center;
+      }
+    </style>
+</head>
+<body>
+  <a href="/">홈으로</a>
+    <h1> 타임리프 each 기능</h1>
+    <table>
+        <tr th:each="num,stat : ${numbers}">
+            <td>list 데이터<div th:text =  "${stat.index}"></div></td>
+            <td>list 데이터 ~~<div th:text="${stat.count}"></div></td>
+            <td>list데이터의 값: <div th:text="${num}"></div></td>
+        </tr>
+     
+    </table>
+    <a href="/">홈으로</a>
+</body>
+</html>

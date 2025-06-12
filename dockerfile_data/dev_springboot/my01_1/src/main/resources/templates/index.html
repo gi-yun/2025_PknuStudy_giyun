@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table{
+        border-collapse: collapse;
+      }
+      tr,td{
+        width: 120px;
+        height: 70px;
+        border: 1px solid #ccc;
+        background-color: rgba(27, 71, 136,0.5);
+        color: white;
+        text-align: center;
+      }
+      td:nth-of-type(even){
+        background-color: rgba(48, 125, 241, 0.5);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>스프링부트 SSR(서버사이드랜더링) 실습</h1>
+
+    <table>
+        <tr>
+            <th>넘버</th>
+            <th>링크</th>
+        </tr>
+      <tr th:each="page, index:${pages}">
+        <td th:text="${index.count}"></td>
+        <!-- <td><a th:href="@{/__${page}__}" th:text="${page}"></a></td> -->
+        <td><a th:href="@{/{pg}( pg =${page})}" th:text="${page}"></a></td>
+    </tr>
+      
+    </table>
+  </body>
+</html>

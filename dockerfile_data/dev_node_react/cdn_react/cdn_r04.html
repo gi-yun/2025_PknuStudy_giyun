@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const App = () => {
+        const [clicked, setClicked] = React.useState(false);
+        const change = () => setClicked(!clicked);
+
+        return (
+          <>
+            <h1>True or False 값 설정</h1>
+            <h2>{clicked + ""}</h2>
+            <hr />
+            <button onClick={change}>
+              {" "}
+              {clicked ? "클릭을 하셔서 true" : "false 값이에요"}
+            </button>
+            {clicked && <Modal />}
+          </>
+        );
+      };
+
+      const Modal = () => {
+        return (
+          // div.login-box>h2{login}+form>(div.user-box>input+label)*2
+          <>
+            <div class="login-box">
+              <h2>login</h2>
+              <form action="">
+                <div class="user-box">
+                  <label for="">ID: </label>
+                  <input type="text" />
+                </div>
+                <div class="user-box">
+                  <label for="">PW: </label>
+                  <input type="text" />
+                </div>
+              </form>
+            </div>
+          </>
+        );
+      };
+      ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+    </script>
+  </body>
+</html>

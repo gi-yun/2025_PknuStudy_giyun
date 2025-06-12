@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const App = () => {
+        const [num1, setNum1] = React.useState(0);
+        const [num2, setNum2] = React.useState(0);
+        const [isIncreasing, setIsIncreasing] = React.useState(true);
+        const ch1 = () => setNum1(num1 < 5 ? num1 + 1 : 0);
+        const ch2 = () => {
+          let next = isIncreasing ? num2 + 1 : num2 - 1;
+          if (next > 5) {
+            next = 4;
+            setIsIncreasing(false);
+          } else if (next < 0) {
+            next = 1;
+            setIsIncreasing(true);
+          }
+          setNum2(next);
+        };
+
+        return (
+          <>
+            <h1>숫자증가</h1>
+            <h2>1번 형식</h2>
+            <h2>{num1}</h2>
+            <hr />
+            <button onClick={ch1}>{`값이 ${num1}인 버튼`}</button>
+            <hr />
+            <h2>2번형식</h2>
+            <h2>{num2}</h2>
+            <hr />
+            <button onClick={ch2}>{`값이 ${num2}인 버튼`}</button>
+          </>
+        );
+      };
+      ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+    </script>
+  </body>
+</html>

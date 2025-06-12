@@ -17,6 +17,7 @@
   },
   "forwardPorts": [
     8010,
+    8090,
     35729
   ],
   "postCreateCommand": "echo 'Dev Container Ready!'"

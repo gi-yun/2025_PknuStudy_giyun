@@ -2,6 +2,25 @@
     "configurations": [
         {
             "type": "java",
+            "name": "My02Application",
+            "request": "launch",
+            "mainClass": "com.pknu.my02.My02Application",
+            "projectName": "my02"
+        },
+        {
+            "type": "java",
+            "name": "My011Application",
+            "request": "launch",
+            "mainClass": "com.pknu.my01_1.My011Application"
+        },
+        {
+            "type": "java",
+            "name": "Application",
+            "request": "launch",
+            "mainClass": "com.exam.Application"
+        },
+        {
+            "type": "java",
             "name": "My01Application",
             "request": "launch",
             "mainClass": "com.pknu.my01.My01Application",
