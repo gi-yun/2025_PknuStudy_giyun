@@ -6,13 +6,13 @@ const table =[
         delivery_price: 5000
     },
     {
-        product_name: '무선마우스스',
+        product_name: '무선마우스',
         price: 12000,
         category: '노트북/태블릿',
         delivery_price: 3000
     },
     {
-        product_name: '아이패드드',
+        product_name: '아이패드',
         price: 725000,
         category: '노트북/태블릿',
         delivery_price: 10000

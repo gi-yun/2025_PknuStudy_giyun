@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "PortfolioApplication",
+            "request": "launch",
+            "mainClass": "com.giyun.portfolio.PortfolioApplication",
+            "projectName": "portfolio"
+        },
+        {
+            "type": "java",
             "name": "My02Application",
             "request": "launch",
             "mainClass": "com.pknu.my02.My02Application",
