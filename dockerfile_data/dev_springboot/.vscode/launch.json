@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Test01ContApplication",
+            "request": "launch",
+            "mainClass": "com.giyun.test01_cont.Test01ContApplication",
+            "projectName": "test01_cont"
+        },
+        {
+            "type": "java",
             "name": "PortfolioApplication",
             "request": "launch",
             "mainClass": "com.giyun.portfolio.PortfolioApplication",
